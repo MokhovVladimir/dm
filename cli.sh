@@ -9,7 +9,7 @@ sudo sed -i \
 
 apt update
 
-apt install -y dnsutils network-manager bind9 bind9utils openssh-server docker docker-compose
+apt install -y dnsutils network-manager fly-admin-ad-client openssh-server docker docker-compose
 
 if ! id sshuser &>/dev/null; then
     useradd -m -u 1010 -s /bin/bash sshuser
@@ -32,4 +32,4 @@ systemctl restart sshd
 
 iptables -A INPUT -p tcp --dport 2024 -j ACCEPT
 
-hostnamectl set-hostname first-srv
+hostnamectl set-hostname first-cli

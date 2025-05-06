@@ -75,7 +75,7 @@ _ldap._tcp.it-sirius.any.    3600 IN SRV 0 100 389   second-srv.it-sirius.any.
 _kerberos._udp.it-sirius.any.3600 IN SRV 0 100 88    second-srv.it-sirius.any.
 _gc._tcp.it-sirius.any.      3600 IN SRV 0 100 3268  second-srv.it-sirius.any.
 #################
-8)cat /etc/bind/zones/db.192.168.254 ( настраиваем обратную зону )
+8)cat /etc/bind/zones/db.192.168.200 ( настраиваем обратную зону )
 #################
 $TTL 86400
 @   IN  SOA ns1.it-sirius.any. admin.it-sirius.any. (
@@ -105,6 +105,3 @@ search it-sirius.any
 nameserver 192.168.220.132 
 ################
 13)dig @192.168.254.137 first-rtr.it-sirius.any +short 
-##ответ - 192.168.220.1
-dig @192.168.220.132 -x 192.168.220.133 +short  
-##ответ - second-srv.it-sirius.any.
